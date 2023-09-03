@@ -2,6 +2,7 @@
 
 void Subject::addObserver(Observer* obsrvr) {
 	observers.push_back(obsrvr);
+	obsrvr->bond(this);
 }
 void Subject::removeObserver(Observer* obsrvr) {
 	auto it = std::remove(observers.begin(), observers.end(), obsrvr);

@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <filesystem>
 
 class LogCommand {
 public:
@@ -19,9 +20,9 @@ public:
 
 class FileLog : public LogCommand {
 public:
-    ~FileLog() override { logs.close(); }
+    ~FileLog() override { log.close(); }
 
     void print(const std::string& message) override;
 private:
-    std::ofstream logs{"logs.txt"};
+    std::ofstream log;
 };
