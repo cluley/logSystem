@@ -9,7 +9,7 @@ void ConsoleLog::print(const std::string& message) {
 void FileLog::print(const std::string& message) {
 	fs::path path{ "C:/Users/oo43/Documents" };
 	path /= "logs.txt";
-	if (!fs::create_directories(path.parent_path())) log.open(path);
+	fs::create_directories(path.parent_path());
 	
 	log << message << std::endl;
 }
